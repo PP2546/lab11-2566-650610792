@@ -13,8 +13,7 @@ export default function RegisFormPage() {
   const [buyBottle, setBuyBottle] = useState(false);
   const [buyShoes, setBuyShoes] = useState(false);
   const [buyCap, setBuyCap] = useState(false);
-  const [Agree,setAgree] = useState(false);
-  const [isUserAgreed,setIsUserAgreed] = useState(true);
+  const [isUserAgreed,setIsUserAgreed] = useState(false);
   const Discount = buyBottle && buyShoes && buyCap;
 
   const inputFnameOnChange = (event) => {
@@ -55,7 +54,6 @@ export default function RegisFormPage() {
   };
 
   const AgreeOnChange = (event) => {
-    setAgree(event.target.checked);
     setIsUserAgreed(event.target.checked);
   };
 
@@ -223,7 +221,7 @@ export default function RegisFormPage() {
 
       {/* Terms and conditions */}
       <div>
-        <input className="me-2" type="checkbox" onChange={AgreeOnChange} checked={Agree}/>I agree to the terms and
+        <input className="me-2" type="checkbox" onChange={AgreeOnChange} checked={isUserAgreed}/>I agree to the terms and
         conditions
       </div>
 
